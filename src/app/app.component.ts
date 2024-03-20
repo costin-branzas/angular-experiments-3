@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   template: 
   `<h1>{{title}}</h1>
   <a routerLink="/rxjs/map">Rxjs Map Component</a>
+  <a routerLink="/http-experiments/requests">Http Requests</a>
   <router-outlet></router-outlet>`,
 })
 export class AppComponent {
