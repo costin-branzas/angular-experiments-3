@@ -38,50 +38,65 @@ export class RequestsComponent {
 
   generateOptions(): Object {
     return {
-      //observe: 'body',
-      //responseType: 'json',
-      //headers: this.generateHeaders()
+      //observe: 'response',
+      responseType: 'json',
+      headers: this.generateHeaders()
     };
   }
 
   okEmpty() {
-    console.log("OkEmpty");
+    console.log("okEmpty");
 
     let getObservable = this.httpClient.get<any>(this.apiUrl + "controller1/ok-empty", this.generateOptions());
 
     getObservable.subscribe({
-      next: (data) => {console.log("OkEmpty response: ", data);},
-      // error: (error) => {console.log("Get Request error: ", error );}
+      next: (data) => {console.log("okEmpty response: ", data);},
+      error: (error) => {console.log("okEmpty error: ", error );}
     })
   }
 
   okString() {
-    console.log("OkString");
+    console.log("okString");
 
-    let getObservable = this.httpClient.get<any>(this.apiUrl + "controller1/ok-string", this.generateOptions());
+    let getObservable = this.httpClient.get<string>(this.apiUrl + "controller1/ok-string", this.generateOptions());
 
     getObservable.subscribe({
-      next: (data) => {console.log("OkString response: ", data);},
-      // error: (error) => {console.log("Get Request error: ", error );}
+      next: (data) => {console.log("okString response: ", data);},
+      error: (error) => {console.log("okString error: ", error );}
     })
   }
 
   okArrayOfObjects() {
-    console.log("OkArrayOfObjects");
+    console.log("okArrayOfObjects");
 
     let getObservable = this.httpClient.get<any>(this.apiUrl + "controller1/ok-array-of-objects", this.generateOptions())
 
     getObservable.subscribe({
-      next: (data) => {console.log("OkArrayOfObjects response: ", data);},
-      // error: (error) => {console.log("Get Request error: ", error );}
+      next: (data) => {console.log("okArrayOfObjects response: ", data);},
+      error: (error) => {console.log("okArrayOfObjects error: ", error );}
     })
   }
 
-  
+  badEmpty() {
+    console.log("badEmpty");
 
-  // observableBehaviour(subscriber:Subscriber<any>) {
-  //   subscriber.next("bla bla...");
-  //   subscriber.complete();
-  // }
+    let getObservable = this.httpClient.get<any>(this.apiUrl + "controller1/bad-empty", this.generateOptions())
+
+    getObservable.subscribe({
+      next: (data) => {console.log("badEmpty response: ", data);},
+      error: (error) => {console.log("badEmpty error: ", error );}
+    })
+  }
+
+  badArrayOfObjects() {
+    console.log("badArrayOfObjects");
+
+    let getObservable = this.httpClient.get<any>(this.apiUrl + "controller1/bad-array-of-objects", this.generateOptions())
+
+    getObservable.subscribe({
+      next: (data) => {console.log("badArrayOfObjects response: ", data);},
+      error: (error) => {console.log("badArrayOfObjects error: ", error );}
+    })
+  }
 
 }
