@@ -37,7 +37,7 @@ export class ConcatMapComponent {
         innerSubscriber.complete();
       });
       
-      //replicate what we have on Darwin (stupid because if no observable is return program crashes...)
+      //replicate what we have on Darwin (stupid because if no observable is returned program crashes...)
       // let a = 1;
       // if (a % 2 == 0)
       //   return Observable.of(data.toString() + " cu un mare caca");
@@ -59,9 +59,4 @@ export class ConcatMapComponent {
     });
 
   }
-
-  // concatMapFunctionality(data: string) {
-  //   //return data + "";
-  //   return "";
-  // }
 }
