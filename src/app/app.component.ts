@@ -5,7 +5,8 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   template: 
   `<h1>{{title}}</h1>
-  <a routerLink="/rxjs/map">Rxjs Map Component</a>
+  <a routerLink="/rxjs/map">Rxjs Map</a>
+  <a routerLink="/rxjs/concat-map">Rxjs ConcatMap</a>
   <a routerLink="/http-experiments/requests">Http Requests</a>
   <router-outlet></router-outlet>`,
 })
