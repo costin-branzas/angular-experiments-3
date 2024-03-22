@@ -10,11 +10,13 @@ import { Observable, Observer, Subscriber } from 'rxjs';
   <p>{{title}}</p>
   <button (click)='thrownError()'>thrownError</button>
   <button (click)='observableError()'>observableError</button>
+  <button (click)='thrownErrorWithTryCatch()'>thrownErrorWithTryCatch</button>
   
   </div>`
 })
 export class ErrorExperimentsComponent {
   
+  //********************** */
   thrownError() {
     console.log("thrownError");
 
@@ -35,7 +37,8 @@ export class ErrorExperimentsComponent {
         console.log("Received: ", data);
       },
       error: (error) => {
-        console.log("Error: ", error)
+        console.log("Error: ", error);
+        console.log("typeof error: ", typeof error);
       },
       complete: () => {
         console.log("Completed.");
@@ -43,6 +46,7 @@ export class ErrorExperimentsComponent {
     });
   }
 
+  //********************** */
   observableError() {
     console.log("observableError");
 
@@ -62,7 +66,8 @@ export class ErrorExperimentsComponent {
         console.log("Received: ", data);
       },
       error: (error) => {
-        console.log("Error: ", error)
+        console.log("Error: ", error);
+        console.log("typeof error: ", typeof error);
       },
       complete: () => {
         console.log("Completed.");
@@ -70,4 +75,39 @@ export class ErrorExperimentsComponent {
     });
   }
 
+
+  //********************** */
+  thrownErrorWithTryCatch() {
+    console.log("thrownError");
+
+    let observable1 = new Observable<any>(subscriber => {
+      subscriber.next(1);
+      subscriber.next(2);
+      
+      try {
+        let a = 1;
+        if (a === 1)
+          throw "thrown shit but tried and caught";
+      }
+      catch (error) {
+        subscriber.error(error);
+      }
+
+      subscriber.next(3);
+      subscriber.complete();
+    });
+
+    observable1.subscribe({
+      next: (data) => {
+        console.log("Received: ", data);
+      },
+      error: (error) => {
+        console.log("Error: ", error);
+        console.log("typeof error: ", typeof error);
+      },
+      complete: () => {
+        console.log("Completed.");
+      }
+    });
+  }
 }
