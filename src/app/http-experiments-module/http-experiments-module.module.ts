@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { RequestsComponent } from './requests-component/requests.component';
+import { RequestsComponent } from './components/requests.component';
 
 
 @NgModule({

@@ -10,6 +10,7 @@ import { Component } from '@angular/core';
   <a routerLink="/rxjs/map">Rxjs Map</a>
   <a routerLink="/rxjs/concat-map">Rxjs ConcatMap</a>
   <a routerLink="/http-experiments/requests">Http Requests</a>
+  <a routerLink="/directives/highlight">Highlight Directive</a>
   <router-outlet></router-outlet>`,
 })
 export class AppComponent {

@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { BasicObservablesComponent } from './basic-observables/basic-observables.component';
-import { ErrorExperimentsComponent } from './error-experiments/error-experiments.component';
-import { MapComponent } from './operator-components/map.component';
-import { ConcatMapComponent } from './operator-components/concat-map.component';
+import { BasicObservablesComponent } from './components/basic-observables.component';
+import { ErrorExperimentsComponent } from './components/error-experiments.component';
+import { MapComponent } from './components/map.component';
+import { ConcatMapComponent } from './components/concat-map.component';
 
 
 @NgModule({
