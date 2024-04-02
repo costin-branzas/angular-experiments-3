@@ -47,7 +47,7 @@ export class RequestsComponent {
   okEmpty() {
     console.log("okEmpty");
 
-    let getObservable = this.httpClient.get<any>(this.apiUrl + "controller1/ok-empty", this.generateOptions());
+    let getObservable = this.httpClient.get<void>(this.apiUrl + "controller1/ok-empty", this.generateOptions());
 
     getObservable.subscribe({
       next: (data) => {console.log("okEmpty response: ", data);},
