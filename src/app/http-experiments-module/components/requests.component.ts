@@ -14,6 +14,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   <button (click)='okStringSimple()'>okStringSimple</button> <br/>
   <button (click)='okStringJson()'>okStringJson</button> <br/>
   <button (click)='okArrayOfObjects()'>okArrayOfObjects</button> <br/>
+  <button (click)='okMultipleTypes()'>okMultipleTypes</button> <br/>
   <button (click)='badEmpty()'>badEmpty</button> <br/>
   <button (click)='badArrayOfObjects()'>badArrayOfObjects</button> <br/>
 
@@ -90,6 +91,19 @@ export class RequestsComponent {
     getObservable.subscribe({
       next: (data) => {console.log("okArrayOfObjects response: ", data);},
       error: (error) => {console.log("okArrayOfObjects error: ", error );}
+    })
+  }
+
+  okMultipleTypes() {
+    console.log("okMultipleTypes");
+
+    let getObservable = this.httpClient.get<void | string| DummyObject2[]>(this.apiUrl + "controller1/ok-multiple-types", this.generateOptions())
+
+    getObservable.subscribe({
+      next: (data) => {
+        console.log("okMultipleTypes response: ", data);
+      },
+      error: (error) => {console.log("okMultipleTypes error: ", error );}
     })
   }
 
