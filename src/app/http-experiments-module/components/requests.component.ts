@@ -32,7 +32,7 @@ export class RequestsComponent {
   generateHeaders() {
     let headers = new HttpHeaders();
 
-    headers = headers.append("Access-Control-Allow-Origin","*");
+    //headers = headers.append("Access-Control-Allow-Origin","*");
 
     return headers;
   }
@@ -85,7 +85,7 @@ export class RequestsComponent {
   okArrayOfObjects() {
     console.log("okArrayOfObjects");
 
-    let getObservable = this.httpClient.get<any>(this.apiUrl + "controller1/ok-array-of-objects", this.generateOptions())
+    let getObservable = this.httpClient.get<DummyObject2[]>(this.apiUrl + "controller1/ok-array-of-objects", this.generateOptions())
 
     getObservable.subscribe({
       next: (data) => {console.log("okArrayOfObjects response: ", data);},
@@ -115,4 +115,15 @@ export class RequestsComponent {
     })
   }
 
+}
+
+interface DummyObject {
+  id: number,
+  someString: string
+}
+
+interface DummyObject2 {
+  id2: number,
+  someString2: string,
+  someObject: Object
 }
