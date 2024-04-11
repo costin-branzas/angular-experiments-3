@@ -11,7 +11,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   <p>{{title}}</p>
   
   <button (click)='okEmpty()'>okEmpty</button> <br/>
-  <button (click)='okString()'>okString</button> <br/>
+  <button (click)='okStringSimple()'>okStringSimple</button> <br/>
+  <button (click)='okStringJson()'>okStringJson</button> <br/>
   <button (click)='okArrayOfObjects()'>okArrayOfObjects</button> <br/>
   <button (click)='badEmpty()'>badEmpty</button> <br/>
   <button (click)='badArrayOfObjects()'>badArrayOfObjects</button> <br/>
@@ -39,7 +40,11 @@ export class RequestsComponent {
   generateOptions(): Object {
     return {
       //observe: 'response',
-      responseType: 'json',
+      
+      //responseType: 'json',
+      //responseType: 'text',
+      //responseType: 'text' as 'json',
+
       headers: this.generateHeaders()
     };
   }
@@ -55,14 +60,25 @@ export class RequestsComponent {
     })
   }
 
-  okString() {
-    console.log("okString");
+  okStringSimple() {
+    console.log("okStringSimple");
 
-    let getObservable = this.httpClient.get<string>(this.apiUrl + "controller1/ok-string", this.generateOptions());
+    let getObservable = this.httpClient.get<string>(this.apiUrl + "controller1/ok-string-simple", this.generateOptions());
 
     getObservable.subscribe({
-      next: (data) => {console.log("okString response: ", data);},
-      error: (error) => {console.log("okString error: ", error );}
+      next: (data) => {console.log("okStringSimple response: ", data);},
+      error: (error) => {console.log("okStringSimple error: ", error );}
+    })
+  }
+
+  okStringJson() {
+    console.log("okStringJson");
+
+    let getObservable = this.httpClient.get<string>(this.apiUrl + "controller1/ok-string-json", this.generateOptions());
+
+    getObservable.subscribe({
+      next: (data) => {console.log("okStringJson response: ", data);},
+      error: (error) => {console.log("okStringJson error: ", error );}
     })
   }
 
