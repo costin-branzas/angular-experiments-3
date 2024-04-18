@@ -10,6 +10,7 @@ import { Observable, Observer, Subscriber } from 'rxjs';
   <p>{{title}}</p>
   <button (click)='basicObservable1()'>basicObservable1</button>
   <button (click)='conciseObservable()'>conciseObservable</button>
+  <button (click)='nullObservables()'>nullObservables</button>
   
   </div>`
 })
@@ -55,6 +56,37 @@ export class BasicObservablesComponent {
         console.log("Completed.");
       }
     })
+  }
+
+  //*************null observables */
+  nullObservables() {
+    console.log("nullObservables");
+    let handlers = {
+      next: (data) => {
+        console.log("Received: ", data);
+      },
+      error: (error) => {
+        console.log("Error: ", error);
+      },
+      complete: () => {
+        console.log("Completed.");
+      }
+    };
+
+    let nullObservable1 = new Observable<void>(subscriber => {
+      subscriber.next(null);
+      subscriber.next(undefined);
+      subscriber.next();
+      subscriber.complete();
+    });
+    
+    let nullObservable2 = Observable.of(null);
+
+    nullObservable1.subscribe(handlers);
+    
+    nullObservable2.subscribe(handlers);
+
+    
   }
 
 }
