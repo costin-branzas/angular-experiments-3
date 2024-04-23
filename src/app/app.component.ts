@@ -12,6 +12,7 @@ import { Component } from '@angular/core';
   <a routerLink="/http-experiments/requests">Http Requests</a> |
   <a routerLink="/directives/highlight">Highlight Directive</a> |
   <a routerLink="/directives/directives-and-change-detection">Directives and Change Detection</a> |
+  <a routerLink="/date/date1">Date1</a> |
   <router-outlet></router-outlet>`,
 })
 export class AppComponent {

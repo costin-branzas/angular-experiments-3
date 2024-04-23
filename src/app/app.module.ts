@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { RxjsModule } from './rxjs-module/rxjs-module.module'
 import { HttpExperimentsModule } from './http-experiments-module/http-experiments-module.module'
 import { DirectivesModule } from './directives-module/directives-module.module';
+import { DateModule  } from './date-module/date-module.module';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { DirectivesModule } from './directives-module/directives-module.module';
     
     RxjsModule,
     HttpExperimentsModule,
-    DirectivesModule
+    DirectivesModule,
+    DateModule
   ],
   declarations: [
     AppComponent
