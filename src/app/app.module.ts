@@ -9,6 +9,7 @@ import { RxjsModule } from './rxjs-module/rxjs-module.module'
 import { HttpExperimentsModule } from './http-experiments-module/http-experiments-module.module'
 import { DirectivesModule } from './directives-module/directives-module.module';
 import { DateModule  } from './date-module/date-module.module';
+import { CircularDepModule  } from './circular-dep/circular-dep.module';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { DateModule  } from './date-module/date-module.module';
     RxjsModule,
     HttpExperimentsModule,
     DirectivesModule,
-    DateModule
+    DateModule,
+    CircularDepModule
   ],
   declarations: [
     AppComponent
