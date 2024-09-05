@@ -15,7 +15,8 @@ import { Observable, Observer, Subscriber } from 'rxjs';
   </div>`
 })
 export class BasicObservablesComponent {
-  
+  title = "basic-observables-component";
+
   //*************VERY explicitly defined observable so that it is easy to understand */
   basicObservable1() {
     console.log("basicObservable1");

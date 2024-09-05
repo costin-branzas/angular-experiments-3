@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 import { CircularDep1 } from './components/circular-dep1.component';
 import { CircularDep2 } from './components/circular-dep2.component';
 
 @NgModule({
     imports: [
+        CommonModule,
 
         RouterModule.forChild([
             { 

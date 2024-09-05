@@ -15,6 +15,7 @@ import { Observable, Observer, Subscriber } from 'rxjs';
   </div>`
 })
 export class ErrorExperimentsComponent {
+  title = "error-experiments-component";
   
   //********************** */
   thrownError() {
