@@ -10,6 +10,7 @@ import { HttpExperimentsModule } from './http-experiments-module/http-experiment
 import { DirectivesModule } from './directives-module/directives-module.module';
 import { DateModule  } from './date-module/date-module.module';
 import { CircularDepModule  } from './circular-dep/circular-dep.module';
+import { TestableModule } from './testable/testable.module';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { CircularDepModule  } from './circular-dep/circular-dep.module';
     HttpExperimentsModule,
     DirectivesModule,
     DateModule,
-    CircularDepModule
+    CircularDepModule,
+    TestableModule
   ],
   declarations: [
     AppComponent
