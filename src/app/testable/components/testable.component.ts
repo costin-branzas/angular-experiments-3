@@ -14,6 +14,12 @@ import { Observable, Observer, Subscriber } from 'rxjs';
 export class TestableComponent {
   title = "testable-component";
 
-  
+  public publicMethod() {
+    console.log("publicMethod running");
+  }
+
+  private privateMethod() {
+    console.log("privateMethod running");
+  }
 
 }
