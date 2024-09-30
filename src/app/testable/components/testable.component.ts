@@ -16,6 +16,12 @@ export class TestableComponent {
 
   public publicMethod() {
     console.log("publicMethod running");
+    this.privateMethod();
+  }
+
+  public publicMethod2() {
+    console.log("publicMethod2 running");
+    this.privateMethod();
   }
 
   private privateMethod() {
