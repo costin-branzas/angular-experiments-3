@@ -1,8 +1,5 @@
 import { ComponentFixture, TestBed } from "@angular/core/testing";
 import { TestableComponent } from "./testable.component";
-import { BrowserModule } from "@angular/platform-browser";
-import { HttpClientModule } from "@angular/common/http";
-import { TestableModule } from "../testable.module";
 
 describe("group", () => {
 
@@ -19,7 +16,7 @@ describe("group", () => {
     });
 
     it("test1", () => {
-        spyOn<any>(testableComponent, 'privateMethod');
+        spyOn<any>(testableComponent, 'privateMethod').and.callFake(()=>{console.log("Fake spy running")});
         testableComponent.publicMethod();
         expect(2).toEqual(2);
     })

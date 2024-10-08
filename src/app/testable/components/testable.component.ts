@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Observable, Observer, Subscriber } from 'rxjs';
 
 
 @Component({
