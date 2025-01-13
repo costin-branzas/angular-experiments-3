@@ -11,6 +11,7 @@ import { DirectivesModule } from './directives-module/directives-module.module';
 import { DateModule  } from './date-module/date-module.module';
 import { CircularDepModule  } from './circular-dep/circular-dep.module';
 import { TestableModule } from './testable/testable.module';
+import { ViewDecoratorModule } from './view-decorator-module/view-decorator.module';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { TestableModule } from './testable/testable.module';
     DirectivesModule,
     DateModule,
     CircularDepModule,
-    TestableModule
+    TestableModule,
+    ViewDecoratorModule
   ],
   declarations: [
     AppComponent

@@ -16,6 +16,7 @@ import { Component } from '@angular/core';
   <a routerLink="/circular-dep/circular-dep1">CircularDep1</a> |
   <a routerLink="/circular-dep/circular-dep2">CircularDep2</a> |
   <a routerLink="/testable/testable1">TestableComponent</a> |
+  <a routerLink="/view-decorator/view-child-experiment1">View Child Experiment 1</a> |
   <router-outlet></router-outlet>`,
 })
 export class AppComponent {
