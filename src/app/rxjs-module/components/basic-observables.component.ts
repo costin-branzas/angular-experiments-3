@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Observable, Observer, Subscriber } from 'rxjs';
+import { Observable, Observer, Subscriber, of } from 'rxjs';
 
 
 @Component({
@@ -81,7 +81,7 @@ export class BasicObservablesComponent {
       subscriber.complete();
     });
     
-    let nullObservable2 = Observable.of(null);
+    let nullObservable2 = of(null);
 
     nullObservable1.subscribe(handlers);
     

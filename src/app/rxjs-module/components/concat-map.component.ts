@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Observable, Subscriber } from 'rxjs';
-import { interval } from 'rxjs/observable/interval';
+import { Observable, Subscriber, interval } from 'rxjs';
+import { concatMap } from 'rxjs/operators';
 
 
 @Component({
@@ -27,7 +27,7 @@ export class ConcatMapComponent {
       subscriber.next(3);
       subscriber.complete();
     })
-    .concatMap((data, index) => {
+    .pipe(concatMap((data, index) => {
       console.log("concatMap data/index: ", data, "/", index);
       
       //create and return the new observable
@@ -44,7 +44,7 @@ export class ConcatMapComponent {
       
       //something with time
       //return Observable.interval(1000).take(3);
-    });
+    }));
 
     observable1.subscribe({
       next: (data) => {

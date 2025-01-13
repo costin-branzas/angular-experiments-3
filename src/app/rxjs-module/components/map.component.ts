@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Observable, Observer, Subscriber } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 
 @Component({
@@ -24,7 +25,7 @@ export class MapComponent {
 
     let observer1 = new Observer1<string>();
 
-    let observable1 = new Observable<string>(this.observableBehaviour).map(this.mapFunctionality);
+    let observable1 = new Observable<string>(this.observableBehaviour).pipe(map(this.mapFunctionality));
 
     observable1.subscribe(observer1);
 
