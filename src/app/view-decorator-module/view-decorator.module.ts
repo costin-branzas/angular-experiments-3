@@ -2,9 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
-import { ViewChildExperiment1 } from './components/view-child-experiment1.component';
-import { SubComponent1 } from './components/sub-component1.component';
-import { SubComponent2 } from './components/sub-component2.component';
+import { BaseComponent } from './components/base-component.component';
+import { SubComponent } from './components/sub-component.component';
 
 @NgModule({
     imports: [
@@ -14,8 +13,8 @@ import { SubComponent2 } from './components/sub-component2.component';
             { 
                 path: 'view-decorator',
                 children: [
-                    { path: '', redirectTo: 'view-child-experiment1', pathMatch: 'full' },
-                    { path: 'view-child-experiment1',  component: ViewChildExperiment1 }
+                    { path: '', redirectTo: 'base-component', pathMatch: 'full' },
+                    { path: 'base-component',  component: BaseComponent }
                 ]
             }
         ]),
@@ -23,9 +22,8 @@ import { SubComponent2 } from './components/sub-component2.component';
     ],
     exports: [RouterModule],
     declarations: [
-        ViewChildExperiment1,
-        SubComponent1,
-        SubComponent2
+        BaseComponent,
+        SubComponent
     ],
 })
 export class ViewDecoratorModule {}
