@@ -19,7 +19,7 @@ export class SubComponent {
 
   @Input()inputValue: number = 1;
 
-  @ViewChild('target', {static: false}) targetReference: ElementRef;
+  @ViewChild('target') targetReference: ElementRef;
 
   constructor() { }
 
