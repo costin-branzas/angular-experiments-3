@@ -29,7 +29,7 @@ import { SubComponent } from './sub-component.component';
 
     <br />
     <p>span dynamic, default element (no read)</p>
-    <ng-template #target5></ng-template>
+    <span #target5></span>
 
     <br />
     <p>ng-template, default element (no read)</p>
