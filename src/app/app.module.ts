@@ -12,6 +12,7 @@ import { DateModule  } from './date-module/date-module.module';
 import { CircularDepModule  } from './circular-dep/circular-dep.module';
 import { TestableModule } from './testable/testable.module';
 import { ViewDecoratorModule } from './view-decorator-module/view-decorator.module';
+import { ViewContainerRefModule } from './view-container-ref-module/view-container-ref.module';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { ViewDecoratorModule } from './view-decorator-module/view-decorator.modu
     DateModule,
     CircularDepModule,
     TestableModule,
-    ViewDecoratorModule
+    ViewDecoratorModule,
+    ViewContainerRefModule
   ],
   declarations: [
     AppComponent
