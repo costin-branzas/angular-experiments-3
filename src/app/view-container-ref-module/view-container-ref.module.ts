@@ -25,6 +25,6 @@ import { SubComponent } from './components/sub-component.component';
         BaseComponent,
         SubComponent
     ],
-    entryComponents: [SubComponent]
+    // entryComponents: [SubComponent] // only needed with Angular 8 (< Ivy engine)
 })
 export class ViewContainerRefModule {}
