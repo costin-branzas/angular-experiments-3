@@ -13,6 +13,7 @@ import { CircularDepModule  } from './circular-dep/circular-dep.module';
 import { TestableModule } from './testable/testable.module';
 import { ViewDecoratorModule } from './view-decorator-module/view-decorator.module';
 import { ViewContainerRefModule } from './view-container-ref-module/view-container-ref.module';
+import { ViewsAndContainersModule } from './views-and-containers-module/views-and-containers.module';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { ViewContainerRefModule } from './view-container-ref-module/view-contain
     CircularDepModule,
     TestableModule,
     ViewDecoratorModule,
-    ViewContainerRefModule
+    ViewContainerRefModule,
+    ViewsAndContainersModule
   ],
   declarations: [
     AppComponent

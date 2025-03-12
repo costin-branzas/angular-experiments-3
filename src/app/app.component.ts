@@ -17,7 +17,8 @@ import { Component } from '@angular/core';
   <a routerLink="/circular-dep/circular-dep2">CircularDep2</a> |
   <a routerLink="/testable/testable1">TestableComponent</a> |
   <a routerLink="/view-decorator/base-component">View Child</a> |
-  <a routerLink="/view-container-ref/base-component">View Container Ref</a>
+  <a routerLink="/view-container-ref/base-component">View Container Ref</a> | 
+  <a routerLink="/views-and-containers/base-component">Views vs ViewContainers</a>
   <router-outlet></router-outlet>`,
 })
 export class AppComponent {
